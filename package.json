@@ -18,7 +18,6 @@
     "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.43.4",
-    "lighthouse": "^7.4.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
