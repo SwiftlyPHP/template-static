@@ -19,7 +19,7 @@ const root = ".";
  */
 function buildJs() {
     const bundle = browserify({
-        entries: root + "/assets/js/main.js"
+        entries: root + "/src/js/main.js"
     });
 
     return bundle.bundle()
@@ -34,7 +34,7 @@ function buildJs() {
         .pipe( rename({
             extname: ".min.js"
         }))
-        .pipe( dest( theme + "/assets/" ) );
+        .pipe( dest( root + "/public/assets/" ) );
 }
 
 
@@ -42,7 +42,7 @@ function buildJs() {
  * Builds the CSS for the site
  */
 function buildCss() {
-    return src( root + "/assets/sass/main.scss" )
+    return src( root + "/src/sass/main.scss" )
         .pipe( sass({
             outputStyle: "expanded"
         }))
@@ -54,7 +54,7 @@ function buildCss() {
         .pipe( rename({
             extname: ".min.css"
         }))
-        .pipe( dest( theme + "/assets/" ) );
+        .pipe( dest( root + "/public/assets/" ) );
 }
 
 
