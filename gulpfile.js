@@ -4,15 +4,13 @@ const rename = require( "gulp-rename" );
 const compiler = require( "sass" );
 const sass = require( "gulp-sass" )( compiler );
 const babel = require( "gulp-babel" );
-const replace = require( "gulp-replace" );
 const combineMedia = require( "gulp-combine-media" );
 const browserify = require( "browserify" );
 const source = require( "vinyl-source-stream" );
 const buffer = require( "vinyl-buffer" );
 
-// Path to the root directory
+// Path to the root directory (change if desired)
 const root = ".";
-
 
 /**
  * Builds JS for the site
@@ -37,7 +35,6 @@ function buildJs() {
         .pipe( dest( root + "/public/assets/" ) );
 }
 
-
 /**
  * Builds the CSS for the site
  */
@@ -56,7 +53,6 @@ function buildCss() {
         }))
         .pipe( dest( root + "/public/assets/" ) );
 }
-
 
 // Make it public
 exports.default = parallel( buildJs, buildCss );
