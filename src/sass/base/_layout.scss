@@ -14,23 +14,28 @@
    display: block;
 }
 
-// 768px
+
+/* ============ 768px ============ */
+
 @media ( min-width: $tablet )  {
 		.content {
-				max-width: 48rem;
+				max-width: 48rem; // 768px
 		}
 }
 
-// 1024px
+
+/* ============ 1024px ============ */
+
 @media ( min-width: $laptop )  {
 		.content {
-				max-width: 62rem;
+				max-width: 62rem; // 992px
 		}
 }
 
-// 1280px
+
+/* ============ 1280px ============ */
 @media ( min-width: $desktop )  {
 		.content {
-				max-width: 64rem;
+				max-width: 64rem; // 1024px
 		}
 }
