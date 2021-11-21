@@ -4,6 +4,7 @@ const rename = require( "gulp-rename" );
 const compiler = require( "sass" );
 const sass = require( "gulp-sass" )( compiler );
 const babel = require( "gulp-babel" );
+const purgecss = require('gulp-purgecss')
 const combineMedia = require( "gulp-combine-media" );
 const browserify = require( "browserify" );
 const source = require( "vinyl-source-stream" );
@@ -48,6 +49,9 @@ function buildCss() {
             outputStyle: "compressed",
             precision: 2
         }))
+        .pipe( purgecss({
+            content: ['public/**/*.html']
+        }) )
         .pipe( rename({
             extname: ".min.css"
         }))
